@@ -158,12 +158,9 @@ nav ul li a:hover:after {
   background-color: rgb(194, 0, 0);
 }
 
-.header-row-right {
-  align-self: flex-end;
-}
-
 .header-row-right img {
   float: inline-end;
+  max-width: 500px;
 }
 /* header end */
 
@@ -178,6 +175,7 @@ nav ul li a:hover:after {
   display: flex;
   margin: auto;
   width: 70%;
+  flex-direction: column;
 }
 
 .about-flex-left {
@@ -204,7 +202,7 @@ nav ul li a:hover:after {
   align-self: flex-end;
 }
    .about-flex-right img {
-     width: 220%;
+     width: 100%;
     max-width: 1500px;
     margin: 16px auto 0;
     display: block;
@@ -415,6 +413,7 @@ tr:nth-of-type(4) {
 
 .bts-container p {
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .bts-container video {
@@ -445,7 +444,7 @@ tr:nth-of-type(4) {
 }
 
 .message-flex {
-  width: 95%;
+  padding-inline: 32px;
   margin: auto;
   display: flex;
   gap: 50px;
@@ -454,6 +453,7 @@ tr:nth-of-type(4) {
 
 .message-form {
   width: 100%;
+  max-width: 1000px;
   border-radius: 10px;
   padding: 30px;
 }
@@ -641,7 +641,6 @@ footer {
 
   .about-flex-right img {
    width: 100%;       /* Gambar akan mengikuti lebar kontainer */
-    max-width: 300px;  /* Batas maksimal agar tidak terlalu memenuhi layar */
     margin: 20px auto 0; /* Jarak atas dikurangi agar lebih proporsional */
     display: block;
     border-radius: 10px; /* Opsional: agar sudut sedikit melengkung */
@@ -650,6 +649,10 @@ footer {
   /* EVENTS */
   .events-container h1 {
     font-size: 32px;
+    text-align: center;
+  }
+
+  .events-container p {
     text-align: center;
   }
 
@@ -697,7 +700,6 @@ footer {
   /* MESSAGE */
   .message-flex {
     flex-direction: column-reverse;
-    width: 90%;
   }
 
   .message-text h1 {
@@ -753,21 +755,13 @@ footer {
     height: 60%;
     align-items: center;
     flex-direction: column;
+    gap: 64px;
   }
 
   .header-row-left h1,
   .header-row-left p {
     width: 100%;
     text-align: center;
-  }
-
-  .header-row-right {
-    width: 100%;
-    margin: auto;
-  }
-
-  .header-row-right img {
-    width: 90%;
   }
 
   .header-row-left .header-icons {
@@ -791,8 +785,7 @@ footer {
   }
 
   .about-flex-right img {
-    margin-top: 0px;
-    width: 17rem;
+    margin-bottom: 100px;
     float: inline-end;
   }
 
