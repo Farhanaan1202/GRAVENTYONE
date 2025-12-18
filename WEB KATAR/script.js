@@ -1,41 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  /* ================= EMAIL JS ================= */
   const form = document.getElementById("contact-form");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    emailjs.sendForm(
-      "service_iz56bil",   // SERVICE ID ASLI
-      "template_vbydjlk",  // TEMPLATE ID ASLI
-      "template_e106vqc",  // TEMPLATE ID ASLI
-      this
-    ).then(function () {
-      alert("Pesan berhasil dikirim!");
-    }, function (error) {
-      alert("Gagal: " + error.text);
-      console.log(error);
+      emailjs.sendForm(
+        "service_iz56bil",
+        "template_vbydjlk",
+        this
+      ).then(
+        function () {
+          alert("Pesan berhasil dikirim!");
+          form.reset();
+        },
+        function (error) {
+          alert("Gagal mengirim email");
+          console.log(error);
+        }
+      );
     });
-  });
-});
-// TAB MEMBERS (Member & Petinggi)
-document.addEventListener("DOMContentLoaded", function () {
+  }
+
+  /* ================= TAB MEMBER & PETINGGI ================= */
   const tabButtons = document.querySelectorAll(".tab-button");
   const tabContents = document.querySelectorAll(".members-profile");
 
   tabButtons.forEach(button => {
     button.addEventListener("click", () => {
-      const tabNumber = button.getAttribute("data-for-tab");
+      const tabNumber = button.dataset.forTab;
 
-      // hapus aktif semua tombol
-      tabButtons.forEach(btn => btn.classList.remove("tab-button-active"));
-      // hapus aktif semua konten
-      tabContents.forEach(content => content.classList.remove("members-profile-active"));
-
-      // aktifkan tombol yg diklik
+      tabButtons.forEach(btn =>
+        btn.classList.remove("tab-button-active")
+      );
       button.classList.add("tab-button-active");
-      // aktifkan konten sesuai tab
-      document.querySelector(`.members-profile[data-tab="${tabNumber}"]`)
-        .classList.add("members-profile-active");
+
+      tabContents.forEach(content =>
+        content.classList.remove("members-profile-active")
+      );
+
+      const activeTab = document.querySelector(
+        `.members-profile[data-tab="${tabNumber}"]`
+      );
+      if (activeTab) {
+        activeTab.classList.add("members-profile-active");
+      }
     });
   });
+
 });
