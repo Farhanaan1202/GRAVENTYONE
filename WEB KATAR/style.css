@@ -204,8 +204,8 @@ nav ul li a:hover:after {
   align-self: flex-end;
 }
    .about-flex-right img {
-     width: 200%;
-    max-width: 2000px;
+     width: 220%;
+    max-width: 1500px;
     margin: 16px auto 0;
     display: block;
 }
@@ -640,9 +640,11 @@ footer {
   }
 
   .about-flex-right img {
-    width: 100px;
-    margin: 200px auto 0;
+   width: 100%;       /* Gambar akan mengikuti lebar kontainer */
+    max-width: 300px;  /* Batas maksimal agar tidak terlalu memenuhi layar */
+    margin: 20px auto 0; /* Jarak atas dikurangi agar lebih proporsional */
     display: block;
+    border-radius: 10px; /* Opsional: agar sudut sedikit melengkung */
   }
 
   /* EVENTS */
