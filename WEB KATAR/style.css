@@ -193,10 +193,10 @@ nav ul li a:hover:after {
 
 .about-flex-left p {
   color: rgb(130, 130, 130);
-  width: 85%;
-  font-size: 16px;
+ width: 85%;
+  font-size: 20px; /* Ubah dari 16px menjadi 20px atau lebih besar */
   text-align: justify;
-  line-height: 23px;
+  line-height: 28px; /* Disarankan menaikkan line-height agar teks tidak rapat */
   margin-bottom: 16px;
 }
 
@@ -204,9 +204,9 @@ nav ul li a:hover:after {
   align-self: flex-end;
 }
    .about-flex-right img {
-     width: 190%;
-    max-width: 6000px;
-    margin: 10px auto 0;
+     width: 200%;
+    max-width: 2000px;
+    margin: 16px auto 0;
     display: block;
 }
 /* about end */
@@ -636,12 +636,12 @@ footer {
 
   .about-flex-left p {
     width: 100%;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .about-flex-right img {
-    width: 160px;
-    margin: 20px auto 0;
+    width: 100px;
+    margin: 200px auto 0;
     display: block;
   }
 
