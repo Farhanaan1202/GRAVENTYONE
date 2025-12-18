@@ -51,3 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+const navResponsive = document.getElementById("responsive");
+
+function showMenu() {
+  navResponsive.style.transform = "translateX(0)";
+}
+
+function hideMenu() {
+  navResponsive.style.transform = "translateX(100%)";
+}
