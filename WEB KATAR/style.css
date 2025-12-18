@@ -203,12 +203,10 @@ nav ul li a:hover:after {
 .about-flex-right {
   align-self: flex-end;
 }
-
-.about-flex-right img {
-   width: 100%;
-    max-width: 320px;
-    height: auto;
-    margin: 20px auto 0;
+   .about-flex-right img {
+     width: 190%;
+    max-width: 6000px;
+    margin: 10px auto 0;
     display: block;
 }
 /* about end */
