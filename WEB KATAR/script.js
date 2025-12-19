@@ -51,12 +51,68 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
-const navResponsive = document.getElementById("responsive");
+document.addEventListener("DOMContentLoaded", function () {
 
-function showMenu() {
-  navResponsive.style.transform = "translateX(0)";
-}
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slides img");
+  const nextBtn = document.querySelector(".next");
+  const prevBtn = document.querySelector(".prev");
 
-function hideMenu() {
-  navResponsive.style.transform = "translateX(100%)";
-}
+  if (slides.length === 0) return;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+
+  nextBtn.addEventListener("click", () => {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  });
+
+  // Auto slide (opsional)
+  setInterval(() => {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }, 4000);
+
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  fadeElements.forEach(el => observer.observe(el));
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".member-animate");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("show");
+        }, index * 120); // delay satu-satu
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  cards.forEach(card => observer.observe(card));
+});
+
