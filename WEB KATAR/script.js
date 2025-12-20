@@ -116,3 +116,11 @@ document.addEventListener("DOMContentLoaded", function () {
   cards.forEach(card => observer.observe(card));
 });
 
+function showMenu() {
+  document.getElementById("responsive").style.transform = "translateX(0)";
+}
+
+function hideMenu() {
+  document.getElementById("responsive").style.transform = "translateX(100%)";
+}
+
